@@ -23,7 +23,7 @@ var carDetails = {
 
 //Code Here
 
-
+const { color, make, model, year } = carDetails
 
 ////////// PROBLEM 2 //////////
 
@@ -33,9 +33,9 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
+function greeting(obj) {
   //Code Here
-  
+  let { title, firstName, lastName } = obj
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -54,21 +54,29 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+const totalPopulation = (obj) => {
+  let { utah, california, texas, arizona } = obj;
+  return utah + california + texas + arizona
+}
 
 
 ////////// PROBLEM 4 //////////
 
 /*
-  Write a function called ingredients that will take in an object. 
-  This object will have 3 properties named carb, fat, and protein. 
-  The property values will be strings. 
-  Use object destructuring to save the property values to new variables. 
-  Push these new variables to an array and return the array. 
+  Write a function called ingredients that will take in an object.
+  This object will have 3 properties named carb, fat, and protein.
+  The property values will be strings.
+  Use object destructuring to save the property values to new variables.
+  Push these new variables to an array and return the array.
 */
 
 //Code Here
-
+const ingredients = (obj) => {
+  let { carb, fat, protein } = obj;
+  let newVar = [];
+  newVar.push(carb, fat, protein)
+  return newVar
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -87,7 +95,15 @@ function greeting( obj ) {
 
 //Code Here
 
-
+const largeNumbers = ({ first, second, third }) => {
+  if (first < second && first < third) {
+    return first
+  } else if (second < third) {
+    return second
+  } else {
+    return third
+  }
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -98,5 +114,11 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+const numberGroups = ({ a, b, c }) => {
+  if (a.length > b.length && a.length > c.length) {
+    return a
+  } else if (b.length > c.length) {
+    return b
+  } else return c
+}
 

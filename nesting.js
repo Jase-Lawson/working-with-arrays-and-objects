@@ -52,6 +52,17 @@ var employees = [
 
 //Code Here
 
+const employeeUpdater = () => {
+  employees.forEach(function (element, index) {
+    if (element.firstName === 'Theo') {
+      employees.splice(index, 1)
+    } else if (element.firstName === 'Lorie') {
+      element.department = 'HR'
+    }
+  }); return employees
+}
+
+
 
 
 ////////// PROBLEM 2 //////////
@@ -67,7 +78,15 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     2. Use nested for loops to check for duplicate numbers, and then remove the duplicates from the array.
     3. Return the updated array.
 */
-
+const removeDuplicates = () => {
+  for (let i = 0; i < workplaceAccidents.length; i++) {
+    for (let j = i + 1; j < workplaceAccidents.length; j++) {
+      if (workplaceAccidents[i] === workplaceAccidents[j]) {
+        workplaceAccidents.splice(j, 1);
+      }
+    }
+  } return workplaceAccidents
+}
 //Code Here
 
 
@@ -81,7 +100,7 @@ var cat = {
     {
       name: 'Grumpy',
       activities: ['be grumpy', 'eat food']
-    }, 
+    },
     {
       name: 'Lazy Bones',
       activities: ['sleep', 'pre-sleep naps']
@@ -97,8 +116,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1]
+var fluffy2ndFriend = cat.catFriends[1].name
 
 
 
@@ -139,18 +158,24 @@ var myCar = {
 */
 
 //Code Here
-
+const recordCleaner = (element) => {
+  for (let i = 0; i < myCar.accidents.length; i++) {
+    if (myCar.accidents[i].atFaultForAccident) {
+      myCar.accidents[i].atFaultForAccident = false
+    }
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
-var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
+var numsArr = [[1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 // Do not edit the code above.
 
 /*
   Above is an array of arrays. Use two for loops.
-    1. Write a function called 'looper'. 
+    1. Write a function called 'looper'.
     2. 'looper' should loop over the arrays.
     3.  If the number is odd, replace it with 'odd'.
         If the number is even, replace it with 'even'.
@@ -158,5 +183,11 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
-
+const looper = () => {
+  for (i = 0; i < numsArr.length; i++) {
+    for (j = 0; j < numsArr[i].length; j++) {
+      numsArr[i][j] = numsArr[i][j] % 2 === 0 ? 'even' : 'odd'
+    }
+  } return numsArr
+}
 
