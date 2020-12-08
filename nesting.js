@@ -63,8 +63,6 @@ const employeeUpdater = () => {
 }
 
 
-
-
 ////////// PROBLEM 2 //////////
 
 // Do not edit the code below.
@@ -82,7 +80,7 @@ const removeDuplicates = () => {
   for (let i = 0; i < workplaceAccidents.length; i++) {
     for (let j = i + 1; j < workplaceAccidents.length; j++) {
       if (workplaceAccidents[i] === workplaceAccidents[j]) {
-        workplaceAccidents.splice(j, 1);
+        workplaceAccidents.splice(j, 1) j--
       }
     }
   } return workplaceAccidents
